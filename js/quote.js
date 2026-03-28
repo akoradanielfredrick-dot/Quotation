@@ -5,22 +5,70 @@
 
 // Package Data Mapping
 const PACKAGE_DATA = {
-    "1/2 Day Mombasa City Tour": { price: 70, nights: 0, type: "Excursion" },
-    "1 Day Mombasa City Tour": { price: 120, nights: 0, type: "Excursion" },
-    "1 Day Shimba": { price: 155, nights: 0, type: "Excursion" },
-    "1 Day Tsavo East": { price: 220, nights: 0, type: "Excursion" },
-    "2 Days Tsavo East": { price: 410, nights: 1, type: "Road Safari" },
-    "2 Days Saltlick Special": { price: 440, nights: 1, type: "Road Safari" },
-    "2 Days Tsavo East and West": { price: 490, nights: 1, type: "Road Safari" },
-    "2 Days Tsavo East-Taita (Saltlick)": { price: 460, nights: 1, type: "Road Safari" },
-    "2 Days Ngutuni-Taita Hills (Saltlick)": { price: 460, nights: 1, type: "Road Safari" },
-    "3 Days Tsavo East-Taita (Saltlick)": { price: 600, nights: 2, type: "Road Safari" },
-    "3 Days Tsavo East and West": { price: 650, nights: 2, type: "Road Safari" },
-    "3 Days Tsavo East or West and Amboseli": { price: 680, nights: 2, type: "Road Safari" },
-    "4 Days Tsavo East-Amboseli-Tsavo west – (BIG FIVE SAFARI)": { price: 900, nights: 3, type: "Road Safari" },
-    "2 Days Masai Mara": { price: 1035, nights: 1, type: "Air Safari" },
-    "3 Maasai Mara (Mara Timbo/Royal Mara/Governors Camp)": { price: 1495, nights: 2, type: "Road Safari" },
-    "3 Days Maasai Mara (Tipilikwani camp/Camp Oloshaiki/Fig tree)": { price: 1575, nights: 2, type: "Road Safari" }
+    "1/2 Day Mombasa City Tour": { 
+        price: 70, nights: 0, type: "Excursion",
+        description: "A short and enjoyable introduction to Mombasa, ideal for guests who want to experience the city’s culture, history, and local atmosphere within a few hours."
+    },
+    "1 Day Mombasa City Tour": { 
+        price: 120, nights: 0, type: "Excursion",
+        description: "A full-day tour designed to give guests a deeper look into Mombasa’s historical sites, cultural heritage, and everyday coastal life."
+    },
+    "1 Day Shimba": { 
+        price: 155, nights: 0, type: "Excursion",
+        description: "A refreshing nature escape to Shimba Hills, offering scenic views, a peaceful environment, and a chance to enjoy wildlife and the beauty of the coastal highlands."
+    },
+    "1 Day Tsavo East": { 
+        price: 220, nights: 0, type: "Excursion",
+        description: "A rewarding one-day safari to Tsavo East, perfect for guests who want to enjoy a true wildlife experience and see Kenya’s famous open savannah landscapes."
+    },
+    "2 Days Tsavo East": { 
+        price: 410, nights: 1, type: "Road Safari",
+        description: "A well-balanced safari package that allows guests to enjoy more time in the park, with better chances for wildlife viewing and a comfortable overnight stay."
+    },
+    "2 Days Saltlick Special": { 
+        price: 440, nights: 1, type: "Road Safari",
+        description: "A short safari ideal for guests who want a comfortable lodge stay combined with game viewing in a unique and well-known safari setting."
+    },
+    "2 Days Tsavo East and West": { 
+        price: 490, nights: 1, type: "Road Safari",
+        description: "A practical safari option for guests who would like to experience the contrasting landscapes and wildlife of both Tsavo East and Tsavo West."
+    },
+    "2 Days Tsavo East-Taita (Saltlick)": { 
+        price: 460, nights: 1, type: "Road Safari",
+        description: "A convenient safari combining the wide plains of Tsavo East with the Taita Hills area and an overnight stay at the popular Salt Lick Lodge."
+    },
+    "2 Days Ngutuni-Taita Hills (Saltlick)": { 
+        price: 460, nights: 1, type: "Road Safari",
+        description: "A short but enjoyable safari that combines good wildlife viewing, attractive scenery, and a comfortable stay in the Taita Hills area."
+    },
+    "3 Days Tsavo East-Taita (Saltlick)": { 
+        price: 600, nights: 2, type: "Road Safari",
+        description: "A relaxed 3-day safari with enough time to enjoy game drives, beautiful views, and a comfortable lodge experience in both Tsavo East and Taita Hills."
+    },
+    "3 Days Tsavo East and West": { 
+        price: 650, nights: 2, type: "Road Safari",
+        description: "A complete short safari covering both parks, ideal for guests who want to enjoy varied scenery, wildlife encounters, and a broader Tsavo experience."
+    },
+    "3 Days Tsavo East or West and Amboseli": { 
+        price: 680, nights: 2, type: "Road Safari",
+        description: "A good safari choice for guests who want to combine Tsavo with Amboseli, known for its beautiful views and strong chances of seeing large elephant herds."
+    },
+    "4 Days Tsavo East-Amboseli-Tsavo west – (BIG FIVE SAFARI)": { 
+        price: 900, nights: 3, type: "Road Safari",
+        description: "A well-planned multi-park safari that offers guests more time, wider wildlife coverage, and the opportunity to enjoy some of Kenya’s most respected safari destinations."
+    },
+    "2 Days Masai Mara": { 
+        price: 1035, nights: 1, type: "Air Safari",
+        description: "A short Masai Mara safari suitable for guests who want to experience one of Kenya’s most famous game reserves within a limited time."
+    },
+    "3 Maasai Mara (Mara Timbo/Royal Mara/Governors Camp)": { 
+        price: 1495, nights: 2, type: "Road Safari",
+        description: "A comfortable Masai Mara package with quality camp options, ideal for guests looking for a more refined stay while enjoying excellent game viewing."
+    },
+    "3 Days Maasai Mara (Tipilikwani camp/Camp Oloshaiki/Fig tree)": { 
+        price: 1575, nights: 2, type: "Road Safari",
+        description: "A practical and attractive Masai Mara safari package offering good accommodation, exciting game drives, and enough time to enjoy the reserve properly."
+    }
 };
 
 // Currency Conversion Rates (USD to X)
@@ -57,8 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedPackage = PACKAGE_DATA[packageNameSelect.value];
             if (selectedPackage) {
                 document.getElementById('adult-price').value = selectedPackage.price;
-                document.getElementById('nights').value = selectedPackage.nights;
+                document.getElementById('nights').value = selectedPackage.nights + 1; // Input is 'Number of Days', not nights
                 document.getElementById('package-type').value = selectedPackage.type;
+                
+                // Set automated description
+                const notesField = document.getElementById('notes');
+                if (notesField) {
+                    notesField.value = selectedPackage.description;
+                }
+
                 updatePreview();
                 saveDraft();
             }
