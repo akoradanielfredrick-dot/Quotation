@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const downloadBtn = document.getElementById('download-btn');
-    const previewCard = document.getElementById('quotation-card');
+    const previewCard = document.getElementById('receipt-card');
     const downloadMsg = document.getElementById('download-message');
 
     if (downloadBtn && previewCard) {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validation: Ensure Client Name and Package Name are filled
             const clientName = document.getElementById('client-name').value;
             const packageName = document.getElementById('package-name').value;
-            const quoteNum = document.getElementById('quote-number').value;
+            const receiptNum = document.getElementById('receipt-number').value;
 
             if (!packageName) {
                 alert('Please select a Tour Package before downloading.');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Filename fallback if client name is empty
                 const safeClientName = clientName ? clientName.replace(/\s+/g, '-').toLowerCase() : 'valuable-client';
-                const filename = `quotation-${safeClientName}-${quoteNum}.png`;
+                const filename = `receipt-${safeClientName}-${receiptNum}.png`;
                 
                 link.href = imgData;
                 link.download = filename;
@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Reset button
                 downloadBtn.disabled = false;
-                downloadBtn.textContent = 'Download Quotation as Image';
+                downloadBtn.textContent = 'Download RECEIPT as Image';
 
                 // Randomise number for next time
-                const quoteNumField = document.getElementById('quote-number');
-                if (typeof generateQuoteNumber === 'function' && quoteNumField) {
-                    quoteNumField.value = generateQuoteNumber();
+                const receiptNumField = document.getElementById('receipt-number');
+                if (typeof generateReceiptNumber === 'function' && receiptNumField) {
+                    receiptNumField.value = generateReceiptNumber();
                     if (typeof updatePreview === 'function') {
                         updatePreview();
                     }
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Download failed:', err);
                 alert('Oops! Something went wrong while generating the image.');
                 downloadBtn.disabled = false;
-                downloadBtn.textContent = 'Download Quotation as Image';
+                downloadBtn.textContent = 'Download RECEIPT as Image';
             });
         });
     }

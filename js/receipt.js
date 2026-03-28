@@ -1,5 +1,5 @@
 /**
- * quote.js - Quotation Logic and Live Preview
+ * receipt.js - Receipt Logic and Live Preview
  * MRANGA TOURS & SAFARIS LTD
  */
 
@@ -80,21 +80,21 @@ let currentRates = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const quoteForm = document.getElementById('quote-form');
-    const previewCard = document.getElementById('quotation-card');
+    const receiptForm = document.getElementById('receipt-form');
+    const previewCard = document.getElementById('receipt-card');
     const clearBtn = document.getElementById('clear-form-btn');
     const packageNameSelect = document.getElementById('package-name');
 
-    if (!quoteForm) return;
+    if (!receiptForm) return;
 
-    // Initialize Quotation
-    initQuotation();
+    // Initialize Receipt
+    initReceipt();
 
     // Fetch live rates
     fetchLatestRates();
 
     // Listen for changes
-    quoteForm.addEventListener('input', (e) => {
+    receiptForm.addEventListener('input', (e) => {
         updatePreview();
         saveDraft();
     });
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (clearBtn) {
         clearBtn.addEventListener('click', () => {
             if (confirm('Are you sure you want to clear all form data?')) {
-                quoteForm.reset();
-                localStorage.removeItem('quoteDraft');
-                initQuotation();
+                receiptForm.reset();
+                localStorage.removeItem('receiptDraft');
+                initReceipt();
                 updatePreview();
             }
         });
@@ -136,17 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Initialize fields on load
  */
-function initQuotation() {
-    const quoteNumField = document.getElementById('quote-number');
+function initReceipt() {
+    const receiptNumField = document.getElementById('receipt-number');
     const travelDateField = document.getElementById('travel-date');
     const dateCreatedField = document.getElementById('p-date-created');
 
     // Restore Draft First
     restoreDraft();
 
-    // Auto-generate or Update Prefix of Quotation Number
-    if (!quoteNumField.value || quoteNumField.value.startsWith('QT-')) {
-        quoteNumField.value = generateQuoteNumber();
+    // Auto-generate or Update Prefix of Receipt Number
+    if (!receiptNumField.value || receiptNumField.value.startsWith('QT-') || receiptNumField.value.startsWith('MT-')) {
+        receiptNumField.value = generateReceiptNumber();
     }
 
     // Set Current Date for Travel Date (default) and Date Created
@@ -200,13 +200,13 @@ async function fetchLatestRates() {
 }
 
 /**
- * Generate a unique quotation number
+ * Generate a unique receipt number
  */
-function generateQuoteNumber() {
+function generateReceiptNumber() {
     const date = new Date();
     const dateStr = date.toISOString().split('T')[0].replace(/-/g, '');
     const random = Math.floor(1000 + Math.random() * 9000); // 4-digit random number for better uniqueness
-    return `MT-${dateStr}-${random}`;
+    return `RC-${dateStr}-${random}`;
 }
 
 /**
@@ -225,7 +225,7 @@ function formatDate(date) {
  */
 function updatePreview() {
     // Basic Details
-    syncText('quote-number', 'p-quote-number');
+    syncText('receipt-number', 'p-receipt-number');
     syncDate('travel-date', 'p-travel-date');
     syncText('client-name', 'p-client-name');
     syncText('client-phone', 'p-client-phone');
@@ -251,7 +251,7 @@ function updatePreview() {
     syncValue('currency', 'p-currency-label');
 
     // Terms & Conditions
-    syncText('quote-validity', 'p-quote-validity');
+    syncText('receipt-validity', 'p-receipt-validity');
     syncText('deposit-terms', 'p-deposit-terms');
     syncCheckboxes('payment-method', 'p-payment-methods');
 
@@ -397,22 +397,22 @@ function addTableRow(description, rate, qty) {
  * Save draft data to localStorage
  */
 function saveDraft() {
-    const formData = new FormData(document.getElementById('quote-form'));
+    const formData = new FormData(document.getElementById('receipt-form'));
     const draft = {};
     formData.forEach((value, key) => {
         draft[key] = value;
     });
-    localStorage.setItem('quoteDraft', JSON.stringify(draft));
+    localStorage.setItem('receiptDraft', JSON.stringify(draft));
 }
 
 /**
  * Restore draft data from localStorage
  */
 function restoreDraft() {
-    const draftStr = localStorage.getItem('quoteDraft');
+    const draftStr = localStorage.getItem('receiptDraft');
     if (draftStr) {
         const draft = JSON.parse(draftStr);
-        const form = document.getElementById('quote-form');
+        const form = document.getElementById('receipt-form');
         for (let key in draft) {
             const field = form.elements[key];
             if (field) {

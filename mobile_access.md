@@ -1,6 +1,6 @@
 # 📱 How to Access on Your Phone
 
-This guide explains how to view and use your Safari Quotation website from your mobile device.
+This guide explains how to view and use your Safari RECEIPT website from your mobile device.
 
 ---
 
@@ -30,7 +30,7 @@ To access your website from **anywhere in the world** (even without Wi-Fi), you 
     -   Extremely simple: upload your folder and they give you a link (e.g., `mrangsafaris.vercel.app`).
     -   Best for high-quality, professional performance.
 2.  **GitHub Pages**:
-    -   If you use GitHub, you can host it directly from your "Quotation" repository for free.
+    -   If you use GitHub, you can host it directly from your "RECEIPT" repository for free.
 
 ### How to Host Now:
 - If you would like me to help you set up hosting on any of these platforms, just ask! It usually takes less than 2 minutes.
@@ -41,4 +41,4 @@ To access your website from **anywhere in the world** (even without Wi-Fi), you 
 The website has been optimized to automatically detect your phone's screen size. On a mobile device:
 - The form and preview will **stack vertically** for easier reading.
 - Buttons are **larger** to make them easier to tap.
-- You can still **Download** the quotation image directly to your phone's gallery/photos!
+- You can still **Download** the receipt image directly to your phone's gallery/photos!

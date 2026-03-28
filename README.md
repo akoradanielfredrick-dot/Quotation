@@ -1,13 +1,13 @@
-# Safari Quotation Calculator - MRANGA TOURS & SAFARIS LTD
+# Safari RECEIPT Calculator - MRANGA TOURS & SAFARIS LTD
 
-A professional, clean, and responsive quotation web application designed for a tours and safaris business. This tool allows staff to quickly generate quotations, preview them in a document-ready format, and download them as high-quality images for sharing with clients.
+A professional, clean, and responsive receipt web application designed for a tours and safaris business. This tool allows staff to quickly generate receipts, preview them in a document-ready format, and download them as high-quality images for sharing with clients.
 
 ## Features
 
 - **Secure Login**: Simple authentication for internal use.
 - **Dynamic Form**: Automatic calculations for travel costs, adults, children, and discounts.
-- **Live Preview**: Real-time synchronization between the form and a professional quotation document.
-- **Image Export**: One-click download of the quotation document as a `.png` image using `html2canvas`.
+- **Live Preview**: Real-time synchronization between the form and a professional receipt document.
+- **Image Export**: One-click download of the receipt document as a `.png` image using `html2canvas`.
 - **Draft Persistence**: Auto-saves form progress in `localStorage` to prevent data loss on page refresh.
 - **Responsive Design**: Optimized for desktops and tablets.
 
@@ -16,12 +16,12 @@ A professional, clean, and responsive quotation web application designed for a t
 ```text
 /
 ├── index.html          # Login Page (Entry Point)
-├── dashboard.html      # Main Quotation Dashboard
+├── dashboard.html      # Main RECEIPT Dashboard
 ├── css/
 │   └── style.css       # Styling for both pages
 ├── js/
 │   ├── auth.js         # Authentication & Route Protection
-│   ├── quote.js        # Quotation Calculations & Live Preview
+│   ├── receipt.js      # RECEIPT Calculations & Live Preview
 │   └── download.js      # Image Export logic
 ├── assets/
 │   └── logo.png        # Company Logo
