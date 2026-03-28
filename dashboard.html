@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MRANGA TOURS & SAFARIS LTD</title>
+    <!-- Google Fonts: Inter and Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <img src="assets/logo.png" alt="Mranga Tours & Safaris Ltd Logo" class="header-logo">
+            <h1 class="header-title">MRANGA TOURS & SAFARIS</h1>
+        </div>
+        <div class="header-right">
+            <span id="user-display" class="user-display">Welcome, Admin</span>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="dashboard-grid">
+            <!-- Left: Quotation Form -->
+            <section class="form-container">
+                <div class="section-card">
+                    <h2 class="section-title">New Quotation Form</h2>
+                    <form id="quote-form">
+                        <!-- Basic Info -->
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="quote-number">Quotation Number</label>
+                                <input type="text" id="quote-number" name="quote-number" readonly>
+                            </div>
+                            <div class="form-group half">
+                                <label for="travel-date">Travel Date</label>
+                                <input type="date" id="travel-date" name="travel-date" required>
+                            </div>
+                        </div>
+
+                        <!-- Client Info -->
+                        <div class="form-group">
+                            <label for="client-name">Client Name</label>
+                            <input type="text" id="client-name" name="client-name" placeholder="Enter client's full name">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="client-phone">Client Phone</label>
+                                <input type="tel" id="client-phone" name="client-phone" placeholder="+254...">
+                            </div>
+                            <div class="form-group half">
+                                <label for="client-email">Client Email</label>
+                                <input type="email" id="client-email" name="client-email" placeholder="client@example.com">
+                            </div>
+                        </div>
+
+                        <!-- Package Info -->
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="package-name">Package Name</label>
+                                <select id="package-name" name="package-name" required>
+                                    <option value="" disabled selected>Select a package</option>
+                                    <option value="1/2 Day Mombasa City Tour">1/2 Day Mombasa City Tour</option>
+                                    <option value="1 Day Mombasa City Tour">1 Day Mombasa City Tour</option>
+                                    <option value="1 Day Shimba">1 Day Shimba</option>
+                                    <option value="1 Day Tsavo East">1 Day Tsavo East</option>
+                                    <option value="2 Days Tsavo East">2 Days Tsavo East</option>
+                                    <option value="2 Days Saltlick Special">2 Days Saltlick Special</option>
+                                    <option value="2 Days Tsavo East and West">2 Days Tsavo East and West</option>
+                                    <option value="2 Days Tsavo East-Taita (Saltlick)">2 Days Tsavo East-Taita (Saltlick)</option>
+                                    <option value="2 Days Ngutuni-Taita Hills (Saltlick)">2 Days Ngutuni-Taita Hills (Saltlick)</option>
+                                    <option value="3 Days Tsavo East-Taita (Saltlick)">3 Days Tsavo East-Taita (Saltlick)</option>
+                                    <option value="3 Days Tsavo East and West">3 Days Tsavo East and West</option>
+                                    <option value="3 Days Tsavo East or West and Amboseli">3 Days Tsavo East or West and Amboseli</option>
+                                    <option value="4 Days Tsavo East-Amboseli-Tsavo west – (BIG FIVE SAFARI)">4 Days Tsavo East-Amboseli-Tsavo west – (BIG FIVE SAFARI)</option>
+                                    <option value="2 Days Masai Mara">2 Days Masai Mara</option>
+                                    <option value="3 Maasai Mara (Mara Timbo/Royal Mara/Governors Camp)">3 Maasai Mara (Mara Timbo/Royal Mara/Governors Camp)</option>
+                                    <option value="3 Days Maasai Mara (Tipilikwani camp/Camp Oloshaiki/Fig tree)">3 Days Maasai Mara (Tipilikwani camp/Camp Oloshaiki/Fig tree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group half">
+                                <label for="package-type">Package Type</label>
+                                <select id="package-type" name="package-type">
+                                    <option value="Road Safari">Road Safari</option>
+                                    <option value="Air Safari">Air Safari</option>
+                                    <option value="Excursion">Excursion</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Pricing and People -->
+                        <div class="form-row">
+                            <div class="form-group quarter">
+                                <label for="adults">Adults</label>
+                                <input type="number" id="adults" name="adults" value="0" min="0">
+                            </div>
+                            <div class="form-group quarter">
+                                <label for="adult-price">Adult Price</label>
+                                <input type="number" id="adult-price" name="adult-price" value="0" min="0">
+                            </div>
+                            <div class="form-group quarter">
+                                <label for="children">Children</label>
+                                <input type="number" id="children" name="children" value="0" min="0">
+                            </div>
+                            <div class="form-group quarter">
+                                <label for="child-price">Child Price</label>
+                                <input type="number" id="child-price" name="child-price" value="0" min="0">
+                            </div>
+                        </div>
+
+                        <!-- Costs and Others -->
+                        <div class="form-row">
+                            <div class="form-group third">
+                                <label for="nights">Number of Nights</label>
+                                <input type="number" id="nights" name="nights" value="0" min="0">
+                            </div>
+                            <div class="form-group third">
+                                <label for="transport-cost">Transport Cost</label>
+                                <input type="number" id="transport-cost" name="transport-cost" value="0" min="0">
+                            </div>
+                            <div class="form-group third">
+                                <label for="accommodation-cost">Accommodation Cost</label>
+                                <input type="number" id="accommodation-cost" name="accommodation-cost" value="0" min="0">
+                            </div>
+                        </div>
+
+                        <!-- Additional Charges -->
+                        <div class="form-row">
+                            <div class="form-group third">
+                                <label for="park-fees">Park Fees</label>
+                                <input type="number" id="park-fees" name="park-fees" value="0" min="0">
+                            </div>
+                            <div class="form-group third">
+                                <label for="extra-charges">Extra Charges</label>
+                                <input type="number" id="extra-charges" name="extra-charges" value="0" min="0">
+                            </div>
+                            <div class="form-group third">
+                                <label for="discount">Discount</label>
+                                <input type="number" id="discount" name="discount" value="0" min="0">
+                            </div>
+                        </div>
+
+                        <!-- Currency and Notes -->
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency" name="currency">
+                                <option value="USD">USD - United States Dollar</option>
+                                <option value="KES">KES - Kenyan Shilling</option>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="GBP">GBP - Pound Sterling</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Notes / Special Requests</label>
+                            <textarea id="notes" name="notes" placeholder="Any special needs or travel preferences..."></textarea>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="form-actions">
+                            <button type="button" id="clear-form-btn" class="clear-btn">Clear Form</button>
+                            <button type="button" id="download-btn" class="download-btn">Download Quotation as Image</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Right: Live Preview -->
+            <section class="preview-container">
+                <div id="quotation-card" class="preview-card">
+                    <!-- Preview Card Header -->
+                    <div class="preview-header">
+                        <div class="preview-company-info">
+                            <img src="assets/logo.png" alt="Mranga Tours & Safaris Logo" class="preview-logo">
+                            <h2 class="preview-company-name">MRANGA TOURS & SAFARIS LTD</h2>
+                        </div>
+                        <div class="preview-title">
+                            <h3>QUOTATION</h3>
+                        </div>
+                    </div>
+
+                    <!-- Preview Content -->
+                    <div class="preview-body">
+                        <div class="preview-details">
+                            <div class="details-left">
+                                <p><strong>Quotation #:</strong> <span id="p-quote-number">...</span></p>
+                                <p><strong>Date Created:</strong> <span id="p-date-created">...</span></p>
+                            </div>
+                            <div class="details-right">
+                                <p><strong>Travel Date:</strong> <span id="p-travel-date">...</span></p>
+                            </div>
+                        </div>
+
+                        <div class="client-section">
+                            <h4>Client Information</h4>
+                            <p><strong>Name:</strong> <span id="p-client-name">...</span></p>
+                            <p><strong>Phone:</strong> <span id="p-client-phone">...</span></p>
+                            <p><strong>Email:</strong> <span id="p-client-email">...</span></p>
+                        </div>
+
+                        <div class="package-section">
+                            <h4>Package Details</h4>
+                            <p><strong>Package Name:</strong> <span id="p-package-name">...</span></p>
+                            <p><strong>Package Type:</strong> <span id="p-package-type">...</span></p>
+                            <p><strong>Duration:</strong> <span id="p-nights">...</span> Night(s)</p>
+                        </div>
+
+                        <!-- Table -->
+                        <table class="preview-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Rate</th>
+                                    <th>Qty</th>
+                                    <th>Total (<span id="p-currency-label">USD</span>)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="p-table-body">
+                                <!-- Dynamically filled via quote.js -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="3" class="text-right">Subtotal</th>
+                                    <td id="p-subtotal">0.00</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3" class="text-right">Discount</th>
+                                    <td id="p-discount">0.00</td>
+                                </tr>
+                                <tr class="grand-total-row">
+                                    <th colspan="3" class="text-right">Grand Total</th>
+                                    <td id="p-grand-total">0.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <div class="notes-section">
+                            <h5>Notes / Special Requests</h5>
+                            <p id="p-notes">...</p>
+                        </div>
+                    </div>
+
+                    <!-- Preview Footer -->
+                    <div class="preview-footer">
+                        <div class="footer-contacts">
+                            <p><strong>Phone 1:</strong> +41 79 400 28 81</p>
+                            <p><strong>Phone 2:</strong> +254 116 837982</p>
+                            <p><strong>Email:</strong> info@mrangatoursandsafaris.com</p>
+                        </div>
+                        <div class="footer-tagline">
+                            <p>Safaris to Remember</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="download-message" class="download-message hidden">
+                    Success! Your quotation is being downloaded.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- html2canvas Library -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/download.js"></script>
+</body>
+</html>
