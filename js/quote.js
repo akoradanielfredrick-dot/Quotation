@@ -7,67 +7,67 @@
 const PACKAGE_DATA = {
     "1/2 Day Mombasa City Tour": { 
         price: 70, days: "1/2", nights: 0, type: "Excursion",
-        description: "Enjoy shopping in the Old Town, visit Fort Jesus, and see the Akamba wood carvers village."
+        description: "Enjoy a relaxing tour of Mombasa as you shop in the Old Town, visit Fort Jesus, and explore the Akamba wood carvers village."
     },
     "1 Day Mombasa City Tour": { 
         price: 120, days: "1", nights: 0, type: "Excursion",
-        description: "Enjoy shopping in the Old Town, visit Fort Jesus and the wood carvers village, elephant tusks, and Bamburi Nature Trail. Lunch included."
+        description: "Enjoy a full day discovering Mombasa’s history and culture with visits to the Old Town, Fort Jesus, the wood carvers village, the elephant tusks, and Bamburi Nature Trail. Lunch included."
     },
     "1 Day Shimba": { 
         price: 155, days: "1", nights: 0, type: "Excursion",
-        description: "Visit the tropical forest park, home to sable antelopes, elephants, buffaloes, and other wildlife. Enjoy a nature walk to Sheldrick Falls, followed by lunch at Shimba Hills Lodge, the only tree hotel at the Coast."
+        description: "Enjoy the beauty of Shimba Hills as you visit the tropical forest park, home to sable antelopes, elephants, buffaloes, and other wildlife. Experience a nature walk to Sheldrick Falls and later enjoy lunch at Shimba Hills Lodge."
     },
     "1 Day Tsavo East": { 
         price: 220, days: "1", nights: 0, type: "Excursion",
-        description: "A day safari to Kenya’s largest game park, with the chance to see red elephants, lions, cheetahs, buffaloes, antelopes, and other wildlife."
+        description: "Enjoy an exciting day safari in Tsavo East, Kenya’s largest game park, where you can look out for red elephants, lions, cheetahs, buffaloes, antelopes, and other wildlife."
     },
     "2 Days Tsavo East": { 
         price: 410, days: "2", nights: 1, type: "Road Safari",
-        description: "Visit the Aruba Dam and enjoy game viewing with chances of seeing hippos, elephants, and many bird species. Overnight at a camp or lodge and enjoy panoramic views of Tsavo East."
+        description: "Enjoy rewarding game drives in Tsavo East, visit Aruba Dam, and spend the night in a comfortable lodge or camp while taking in the scenic beauty of the park."
     },
     "2 Days Salt Lick Special": { 
         price: 440, days: "2", nights: 1, type: "Road Safari",
-        description: "Visit Taita Hills Sanctuary for game drives, then proceed for more game viewing before dinner and overnight at Salt Lick Lodge. Early morning game drive before breakfast, then lunch in Voi town."
+        description: "Enjoy game drives in Taita Hills Sanctuary, followed by dinner and an overnight stay at the famous Salt Lick Lodge. Wake up to an early morning game drive before breakfast and later enjoy lunch in Voi town."
     },
     "2 Days Tsavo East and West": { 
         price: 490, days: "2", nights: 1, type: "Road Safari",
-        description: "Visit Kenya’s largest park and look out for the Big Five. After lunch, proceed to Tsavo West for another game drive. Overnight with a chance to watch leopard feeding at night at Ngulia Lodge or stay at Ngulia Safari Camp."
+        description: "Enjoy the experience of visiting both Tsavo East and Tsavo West, with excellent opportunities for game viewing and a chance to look out for Kenya’s Big Five. After lunch, continue to Tsavo West for another exciting game drive and overnight stay."
     },
     "2 Days Tsavo East-Taita (Salt Lick)": { 
         price: 460, days: "2", nights: 1, type: "Road Safari",
-        description: "Drive to Tsavo East for game viewing in Kenya’s largest park. After lunch in Voi town, proceed to Taita Hills Sanctuary for an afternoon game drive and overnight at Salt Lick Lodge."
+        description: "Enjoy game viewing in Tsavo East and later continue to Taita Hills Sanctuary for an afternoon game drive. End your day with a comfortable overnight stay at Salt Lick Lodge."
     },
     "2 Days Ngutuni-Taita Hills (Salt Lick)": { 
         price: 460, days: "2", nights: 1, type: "Road Safari",
-        description: "Drive to Ngutuni Sanctuary for a game drive, then after lunch at Ngutuni Lodge proceed to Taita Hills Sanctuary for an afternoon game drive and overnight at Salt Lick Lodge."
+        description: "Enjoy a game drive in Ngutuni Sanctuary, followed by lunch at Ngutuni Lodge, then continue to Taita Hills Sanctuary for an afternoon game drive and overnight stay at Salt Lick Lodge."
     },
     "3 Days Tsavo East-Taita (Salt Lick)": { 
         price: 600, days: "3", nights: 2, type: "Road Safari",
-        description: "Drive to Tsavo East and look out for red elephants, lions, cheetahs, buffaloes, and other wildlife. Overnight at Voi Wildlife Lodge. On the second day, continue to Taita Hills Sanctuary for another game drive and overnight at Salt Lick Lodge."
+        description: "Enjoy an extended safari through Tsavo East and Taita Hills, with opportunities to see red elephants, lions, cheetahs, buffaloes, and other wildlife. Spend your nights at Voi Wildlife Lodge and Salt Lick Lodge for a comfortable safari stay."
     },
     "3 Days Tsavo East and West": { 
         price: 650, days: "3", nights: 2, type: "Road Safari",
-        description: "Drive to Tsavo East for wildlife viewing and birdlife, with overnight at Voi Lodge. The next day proceed to Tsavo West to visit Mzima Springs and Rhino Sanctuary, with overnight at Ngulia Lodge."
+        description: "Enjoy the contrast of Tsavo East and Tsavo West as you explore different wildlife habitats, birdlife, Mzima Springs, and Rhino Sanctuary, with comfortable overnight stays along the way."
     },
     "3 Days Tsavo East or West and Amboseli": { 
         price: 680, days: "3", nights: 2, type: "Road Safari",
-        description: "Visit Tsavo, Kenya’s largest park, and also enjoy views of Africa’s highest mountain, Mount Kilimanjaro, while in Amboseli Game Reserve. Overnight in lodges or camps."
+        description: "Enjoy a safari that combines Tsavo with Amboseli, where you can experience rewarding game drives and beautiful views of Mount Kilimanjaro while staying in comfortable lodges or camps."
     },
     "4 Days Tsavo East-Amboseli-Tsavo West (Big Five Safari)": { 
         price: 900, days: "4", nights: 3, type: "Road Safari",
-        description: "Visit Kenya’s largest national park, continue to Amboseli, the land of Kilimanjaro, and on the last day drive to Tsavo West for Mzima Springs and Rhino Sanctuary. Overnight in lodges or camps."
+        description: "Enjoy a wider safari experience across three outstanding parks, with more opportunities for wildlife viewing, scenic landscapes, Mzima Springs, Rhino Sanctuary, and views of Mount Kilimanjaro."
     },
     "2 Days Masai Mara": { 
         price: 1035, days: "2", nights: 1, type: "Air Safari",
-        description: "Visit the jewel park of Kenya, with excellent chances of seeing the Big Five: lion, rhino, leopard, buffalo, and elephant, for a memorable safari experience."
+        description: "Enjoy a memorable safari in the Masai Mara, the jewel park of Kenya, where you can look out for the Big Five including lion, rhino, leopard, buffalo, and elephant."
     },
     "3 Days Masai Mara (Mara Timbo / Royal Mara / Governors Camp)": { 
         price: 1495, days: "3", nights: 2, type: "Road Safari",
-        description: "A well-planned Masai Mara safari with comfortable camp options, offering quality game viewing and a memorable stay in one of Kenya’s most famous reserves."
+        description: "Enjoy a comfortable stay in the Masai Mara with quality camp options, rewarding game drives, and the chance to experience one of Kenya’s most famous wildlife destinations."
     },
     "3 Days Masai Mara (Tipilikwani Camp / Camp Oloshaiki / Fig Tree)": { 
         price: 1575, days: "3", nights: 2, type: "Road Safari",
-        description: "Enjoy a rewarding Masai Mara safari with exciting game drives, comfortable camp accommodation, and a memorable stay in this jewel park of Kenya."
+        description: "Enjoy exciting game drives, comfortable accommodation, and the beauty of the Masai Mara as you experience one of Kenya’s most admired safari destinations."
     }
 };
 
