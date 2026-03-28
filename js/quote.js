@@ -61,7 +61,7 @@ const PACKAGE_DATA = {
         price: 1035, days: "2", nights: 1, type: "Air Safari",
         description: "Enjoy a memorable safari in the Masai Mara, the jewel park of Kenya, where you can look out for the Big Five including lion, rhino, leopard, buffalo, and elephant."
     },
-    "3 Days Masai Mara (Mara Timbo / Royal Mara / Governors Camp)": { 
+    "3 Maasai Mara (Mara Timbo / Royal Mara / Governors Camp)": { 
         price: 1495, days: "3", nights: 2, type: "Road Safari",
         description: "Enjoy a comfortable stay in the Masai Mara with quality camp options, rewarding game drives, and the chance to experience one of Kenya’s most famous wildlife destinations."
     },
