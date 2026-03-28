@@ -7,67 +7,67 @@
 const PACKAGE_DATA = {
     "1/2 Day Mombasa City Tour": { 
         price: 70, days: "1/2", nights: 0, type: "Excursion",
-        description: "A short and enjoyable introduction to Mombasa, ideal for guests who want to experience the city’s culture, history, and local atmosphere within a few hours."
+        description: "Enjoy shopping in the Old Town, visit Fort Jesus, and see the Akamba wood carvers village."
     },
     "1 Day Mombasa City Tour": { 
         price: 120, days: "1", nights: 0, type: "Excursion",
-        description: "A full-day tour designed to give guests a deeper look into Mombasa’s historical sites, cultural heritage, and everyday coastal life."
+        description: "Enjoy shopping in the Old Town, visit Fort Jesus and the wood carvers village, elephant tusks, and Bamburi Nature Trail. Lunch included."
     },
     "1 Day Shimba": { 
         price: 155, days: "1", nights: 0, type: "Excursion",
-        description: "A refreshing nature escape to Shimba Hills, offering scenic views, a peaceful environment, and a chance to enjoy wildlife and the beauty of the coastal highlands."
+        description: "Visit the tropical forest park, home to sable antelopes, elephants, buffaloes, and other wildlife. Enjoy a nature walk to Sheldrick Falls, followed by lunch at Shimba Hills Lodge, the only tree hotel at the Coast."
     },
     "1 Day Tsavo East": { 
         price: 220, days: "1", nights: 0, type: "Excursion",
-        description: "A rewarding one-day safari to Tsavo East, perfect for guests who want to enjoy a true wildlife experience and see Kenya’s famous open savannah landscapes."
+        description: "A day safari to Kenya’s largest game park, with the chance to see red elephants, lions, cheetahs, buffaloes, antelopes, and other wildlife."
     },
     "2 Days Tsavo East": { 
         price: 410, days: "2", nights: 1, type: "Road Safari",
-        description: "A well-balanced safari package that allows guests to enjoy more time in the park, with better chances for wildlife viewing and a comfortable overnight stay."
+        description: "Visit the Aruba Dam and enjoy game viewing with chances of seeing hippos, elephants, and many bird species. Overnight at a camp or lodge and enjoy panoramic views of Tsavo East."
     },
-    "2 Days Saltlick Special": { 
+    "2 Days Salt Lick Special": { 
         price: 440, days: "2", nights: 1, type: "Road Safari",
-        description: "A short safari ideal for guests who want a comfortable lodge stay combined with game viewing in a unique and well-known safari setting."
+        description: "Visit Taita Hills Sanctuary for game drives, then proceed for more game viewing before dinner and overnight at Salt Lick Lodge. Early morning game drive before breakfast, then lunch in Voi town."
     },
     "2 Days Tsavo East and West": { 
         price: 490, days: "2", nights: 1, type: "Road Safari",
-        description: "A practical safari option for guests who would like to experience the contrasting landscapes and wildlife of both Tsavo East and Tsavo West."
+        description: "Visit Kenya’s largest park and look out for the Big Five. After lunch, proceed to Tsavo West for another game drive. Overnight with a chance to watch leopard feeding at night at Ngulia Lodge or stay at Ngulia Safari Camp."
     },
-    "2 Days Tsavo East-Taita (Saltlick)": { 
+    "2 Days Tsavo East-Taita (Salt Lick)": { 
         price: 460, days: "2", nights: 1, type: "Road Safari",
-        description: "A convenient safari combining the wide plains of Tsavo East with the Taita Hills area and an overnight stay at the popular Salt Lick Lodge."
+        description: "Drive to Tsavo East for game viewing in Kenya’s largest park. After lunch in Voi town, proceed to Taita Hills Sanctuary for an afternoon game drive and overnight at Salt Lick Lodge."
     },
-    "2 Days Ngutuni-Taita Hills (Saltlick)": { 
+    "2 Days Ngutuni-Taita Hills (Salt Lick)": { 
         price: 460, days: "2", nights: 1, type: "Road Safari",
-        description: "A short but enjoyable safari that combines good wildlife viewing, attractive scenery, and a comfortable stay in the Taita Hills area."
+        description: "Drive to Ngutuni Sanctuary for a game drive, then after lunch at Ngutuni Lodge proceed to Taita Hills Sanctuary for an afternoon game drive and overnight at Salt Lick Lodge."
     },
-    "3 Days Tsavo East-Taita (Saltlick)": { 
+    "3 Days Tsavo East-Taita (Salt Lick)": { 
         price: 600, days: "3", nights: 2, type: "Road Safari",
-        description: "A relaxed 3-day safari with enough time to enjoy game drives, beautiful views, and a comfortable lodge experience in both Tsavo East and Taita Hills."
+        description: "Drive to Tsavo East and look out for red elephants, lions, cheetahs, buffaloes, and other wildlife. Overnight at Voi Wildlife Lodge. On the second day, continue to Taita Hills Sanctuary for another game drive and overnight at Salt Lick Lodge."
     },
     "3 Days Tsavo East and West": { 
         price: 650, days: "3", nights: 2, type: "Road Safari",
-        description: "A complete short safari covering both parks, ideal for guests who want to enjoy varied scenery, wildlife encounters, and a broader Tsavo experience."
+        description: "Drive to Tsavo East for wildlife viewing and birdlife, with overnight at Voi Lodge. The next day proceed to Tsavo West to visit Mzima Springs and Rhino Sanctuary, with overnight at Ngulia Lodge."
     },
     "3 Days Tsavo East or West and Amboseli": { 
         price: 680, days: "3", nights: 2, type: "Road Safari",
-        description: "A good safari choice for guests who want to combine Tsavo with Amboseli, known for its beautiful views and strong chances of seeing large elephant herds."
+        description: "Visit Tsavo, Kenya’s largest park, and also enjoy views of Africa’s highest mountain, Mount Kilimanjaro, while in Amboseli Game Reserve. Overnight in lodges or camps."
     },
-    "4 Days Tsavo East-Amboseli-Tsavo west – (BIG FIVE SAFARI)": { 
+    "4 Days Tsavo East-Amboseli-Tsavo West (Big Five Safari)": { 
         price: 900, days: "4", nights: 3, type: "Road Safari",
-        description: "A well-planned multi-park safari that offers guests more time, wider wildlife coverage, and the opportunity to enjoy some of Kenya’s most respected safari destinations."
+        description: "Visit Kenya’s largest national park, continue to Amboseli, the land of Kilimanjaro, and on the last day drive to Tsavo West for Mzima Springs and Rhino Sanctuary. Overnight in lodges or camps."
     },
     "2 Days Masai Mara": { 
         price: 1035, days: "2", nights: 1, type: "Air Safari",
-        description: "A short Masai Mara safari suitable for guests who want to experience one of Kenya’s most famous game reserves within a limited time."
+        description: "Visit the jewel park of Kenya, with excellent chances of seeing the Big Five: lion, rhino, leopard, buffalo, and elephant, for a memorable safari experience."
     },
-    "3 Maasai Mara (Mara Timbo/Royal Mara/Governors Camp)": { 
+    "3 Days Masai Mara (Mara Timbo / Royal Mara / Governors Camp)": { 
         price: 1495, days: "3", nights: 2, type: "Road Safari",
-        description: "A comfortable Masai Mara package with quality camp options, ideal for guests looking for a more refined stay while enjoying excellent game viewing."
+        description: "A well-planned Masai Mara safari with comfortable camp options, offering quality game viewing and a memorable stay in one of Kenya’s most famous reserves."
     },
-    "3 Days Maasai Mara (Tipilikwani camp/Camp Oloshaiki/Fig tree)": { 
+    "3 Days Masai Mara (Tipilikwani Camp / Camp Oloshaiki / Fig Tree)": { 
         price: 1575, days: "3", nights: 2, type: "Road Safari",
-        description: "A practical and attractive Masai Mara safari package offering good accommodation, exciting game drives, and enough time to enjoy the reserve properly."
+        description: "Enjoy a rewarding Masai Mara safari with exciting game drives, comfortable camp accommodation, and a memorable stay in this jewel park of Kenya."
     }
 };
 
