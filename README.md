@@ -57,3 +57,6 @@ This app is built using only HTML, CSS, and Vanilla JavaScript, making it perfec
 
 ---
 © 2026 MRANGA TOURS & SAFARIS LTD. All rights reserved.
+
+
+
