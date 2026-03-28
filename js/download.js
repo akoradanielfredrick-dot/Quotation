@@ -60,6 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Reset button
                 downloadBtn.disabled = false;
                 downloadBtn.textContent = 'Download Quotation as Image';
+
+                // Randomise number for next time
+                const quoteNumField = document.getElementById('quote-number');
+                if (typeof generateQuoteNumber === 'function' && quoteNumField) {
+                    quoteNumField.value = generateQuoteNumber();
+                    if (typeof updatePreview === 'function') {
+                        updatePreview();
+                    }
+                }
             }).catch(err => {
                 console.error('Download failed:', err);
                 alert('Oops! Something went wrong while generating the image.');

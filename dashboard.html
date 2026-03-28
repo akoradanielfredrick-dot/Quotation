@@ -111,33 +111,20 @@
                             </div>
                         </div>
 
-                        <!-- Costs and Others -->
                         <div class="form-row">
-                            <div class="form-group third">
-                                <label for="nights">Number of Nights</label>
-                                <input type="number" id="nights" name="nights" value="0" min="0">
-                            </div>
-                            <div class="form-group third">
-                                <label for="transport-cost">Transport Cost</label>
-                                <input type="number" id="transport-cost" name="transport-cost" value="0" min="0">
-                            </div>
-                            <div class="form-group third">
-                                <label for="accommodation-cost">Accommodation Cost</label>
-                                <input type="number" id="accommodation-cost" name="accommodation-cost" value="0" min="0">
+                            <div class="form-group half">
+                                <label for="nights">Number of Days</label>
+                                <input type="number" id="nights" name="nights" value="1" min="1">
                             </div>
                         </div>
 
                         <!-- Additional Charges -->
                         <div class="form-row">
-                            <div class="form-group third">
-                                <label for="park-fees">Park Fees</label>
-                                <input type="number" id="park-fees" name="park-fees" value="0" min="0">
-                            </div>
-                            <div class="form-group third">
+                            <div class="form-group half">
                                 <label for="extra-charges">Extra Charges</label>
                                 <input type="number" id="extra-charges" name="extra-charges" value="0" min="0">
                             </div>
-                            <div class="form-group third">
+                            <div class="form-group half">
                                 <label for="discount">Discount</label>
                                 <input type="number" id="discount" name="discount" value="0" min="0">
                             </div>
@@ -157,6 +144,35 @@
                         <div class="form-group">
                             <label for="notes">Notes / Special Requests</label>
                             <textarea id="notes" name="notes" placeholder="Any special needs or travel preferences..."></textarea>
+                        </div>
+
+                        <!-- Terms & Conditions -->
+                        <div class="form-section-header">
+                            <h3 class="subsection-title">Terms & Conditions</h3>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="quote-validity">Quotation Validity</label>
+                                <input type="text" id="quote-validity" name="quote-validity" value="7 Days" placeholder="e.g. 7 Days">
+                            </div>
+                            <div class="form-group half">
+                                <label for="deposit-terms">Deposit Terms</label>
+                                <input type="text" id="deposit-terms" name="deposit-terms" value="50% deposit to confirm booking" placeholder="e.g. 50% deposit">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Payment Channels</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="payment-method" value="Mpesa" checked> Mpesa
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="payment-method" value="Bank" checked> Bank Transfer
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="payment-method" value="Cash" checked> Cash
+                                </label>
+                            </div>
                         </div>
 
                         <!-- Actions -->
@@ -205,7 +221,7 @@
                             <h4>Package Details</h4>
                             <p><strong>Package Name:</strong> <span id="p-package-name">...</span></p>
                             <p><strong>Package Type:</strong> <span id="p-package-type">...</span></p>
-                            <p><strong>Duration:</strong> <span id="p-nights">...</span> Night(s)</p>
+                            <p><strong>Duration:</strong> <span id="p-duration">...</span></p>
                         </div>
 
                         <!-- Table -->
@@ -241,6 +257,35 @@
                             <h5>Notes / Special Requests</h5>
                             <p id="p-notes">...</p>
                         </div>
+
+                        <div class="terms-section">
+                            <h5>Terms & Conditions</h5>
+                            <div class="terms-grid">
+                                <div class="term-item">
+                                    <strong>Quotation Validity:</strong> <span id="p-quote-validity">...</span>
+                                </div>
+                                <div class="term-item">
+                                    <strong>Deposit Terms:</strong> <span id="p-deposit-terms">...</span>
+                                </div>
+                                <div class="term-item">
+                                    <strong>Payment Channels:</strong> <span id="p-payment-methods">...</span>
+                                </div>
+                            </div>
+                            <div class="general-conditions">
+                                <div class="condition-item">
+                                    <span class="condition-label">(a)</span>
+                                    <span class="condition-text">Children aged 2-11 years are entitled to 50% discount on road safaris and 25% discounts on air safaris if staying with 2 adults.</span>
+                                </div>
+                                <div class="condition-item">
+                                    <span class="condition-label">(b)</span>
+                                    <span class="condition-text">Cancellation charges 48 hours before departure is 50% and less than 48 hours before departure is 100%</span>
+                                </div>
+                                <div class="condition-item">
+                                    <span class="condition-label">(c)</span>
+                                    <span class="condition-text">Insurance: all our buses and aircrafts are insured according to the I.A.T.A International standards and law of Kenya.</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Preview Footer -->
@@ -251,7 +296,7 @@
                             <p><strong>Email:</strong> info@mrangatoursandsafaris.com</p>
                         </div>
                         <div class="footer-tagline">
-                            <p>Safaris to Remember</p>
+                            <p>Incredible Wildlife Safari</p>
                         </div>
                     </div>
                 </div>

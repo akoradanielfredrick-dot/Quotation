@@ -86,14 +86,16 @@ function initQuotation() {
     const travelDateField = document.getElementById('travel-date');
     const dateCreatedField = document.getElementById('p-date-created');
 
-    // Auto-generate Quotation Number
-    if (!quoteNumField.value) {
+    // Restore Draft First
+    restoreDraft();
+
+    // Auto-generate or Update Prefix of Quotation Number
+    if (!quoteNumField.value || quoteNumField.value.startsWith('QT-')) {
         quoteNumField.value = generateQuoteNumber();
     }
 
     // Set Current Date for Travel Date (default) and Date Created
-    const today = new Date().toISOString().split('T')[0];
-    if (travelDateField) {
+    if (travelDateField && !travelDateField.value) {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         travelDateField.value = tomorrow.toISOString().split('T')[0];
@@ -101,9 +103,6 @@ function initQuotation() {
     if (dateCreatedField) {
         dateCreatedField.textContent = formatDate(new Date());
     }
-
-    // Restore Draft
-    restoreDraft();
 
     // Initial Preview
     updatePreview();
@@ -151,8 +150,8 @@ async function fetchLatestRates() {
 function generateQuoteNumber() {
     const date = new Date();
     const dateStr = date.toISOString().split('T')[0].replace(/-/g, '');
-    const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-    return `QT-${dateStr}-${random}`;
+    const random = Math.floor(1000 + Math.random() * 9000); // 4-digit random number for better uniqueness
+    return `MT-${dateStr}-${random}`;
 }
 
 /**
@@ -178,8 +177,20 @@ function updatePreview() {
     syncText('client-email', 'p-client-email');
     syncText('package-name', 'p-package-name');
     syncValue('package-type', 'p-package-type');
-    syncValue('nights', 'p-nights');
+    
+    // Format duration: X Days, Y Nights
+    const days = getNum('nights');
+    const nights = days > 1 ? (days - 1) : 0;
+    const durationText = nights > 0 ? `${days} Days, ${nights} Night(s)` : `${days} Day (Excursion)`;
+    const durationPreview = document.getElementById('p-duration');
+    if (durationPreview) durationPreview.textContent = durationText;
+
     syncValue('currency', 'p-currency-label');
+
+    // Terms & Conditions
+    syncText('quote-validity', 'p-quote-validity');
+    syncText('deposit-terms', 'p-deposit-terms');
+    syncCheckboxes('payment-method', 'p-payment-methods');
 
     // Performance Calculations
     calculateTotals();
@@ -218,6 +229,17 @@ function syncDate(inputId, previewId) {
         preview.textContent = formatDate(input.value);
     }
 }
+/**
+ * Sync checkbox group values to preview
+ */
+function syncCheckboxes(name, previewId) {
+    const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+    const preview = document.getElementById(previewId);
+    if (preview) {
+        const values = Array.from(checkboxes).map(cb => cb.value);
+        preview.textContent = values.length > 0 ? values.join(', ') : 'None selected';
+    }
+}
 
 /**
  * Calculate all totals and subtotals
@@ -233,18 +255,11 @@ function calculateTotals() {
     const adultPrice = getNum('adult-price');
     const children = getNum('children');
     const childPrice = getNum('child-price');
-    const transport = getNum('transport-cost');
-    const accommodationRate = getNum('accommodation-cost');
-    const parkFeesRate = getNum('park-fees');
     const extras = getNum('extra-charges');
     const discount = getNum('discount');
 
-    const accommodationTotal = accommodationRate * nights;
-    const parkFeesTotal = parkFeesRate * days;
-
-    const baseSubtotal = (adults * adultPrice) + (children * childPrice) + transport + accommodationTotal + parkFeesTotal + extras;
-    const profitMargin = baseSubtotal * 0.10;
-    const totalWithMargin = (baseSubtotal + profitMargin) * rate;
+    const baseSubtotal = (adults * adultPrice) + (children * childPrice) + extras;
+    const totalWithMargin = baseSubtotal * rate;
     const convertedDiscount = discount * rate;
     const grandTotal = Math.max(0, totalWithMargin - convertedDiscount);
 
@@ -277,36 +292,15 @@ function updateTable() {
     const rate = currentRates[currency] || 1;
     tableBody.innerHTML = '';
 
-    const nights = getNum('nights');
-    const days = nights > 0 ? (nights + 1) : 1;
-
     const adults = getNum('adults');
     const adultPrice = getNum('adult-price');
     const children = getNum('children');
     const childPrice = getNum('child-price');
-    const transport = getNum('transport-cost');
-    const accommodationRate = getNum('accommodation-cost');
-    const parkFeesRate = getNum('park-fees');
     const extras = getNum('extra-charges');
 
-    const accommodationTotal = accommodationRate * nights;
-    const parkFeesTotal = parkFeesRate * days;
-
-    const baseSubtotal = (adults * adultPrice) + (children * childPrice) + transport + accommodationTotal + parkFeesTotal + extras;
-    const profitMargin = baseSubtotal * 0.10;
-
-    // Add rows if value > 0 (converted to selected currency)
     if (adults > 0) addTableRow('Adults', adultPrice * rate, adults);
     if (children > 0) addTableRow('Children', childPrice * rate, children);
-    if (transport > 0) addTableRow('Transport', transport * rate, 1);
-    if (accommodationRate > 0) addTableRow('Accommodation', accommodationRate * rate, nights);
-    if (parkFeesRate > 0) addTableRow('Park Fees', parkFeesRate * rate, days);
     if (extras > 0) addTableRow('Extra Charges', extras * rate, 1);
-
-    // Add Profit Margin Row
-    if (profitMargin > 0) {
-        addTableRow('Company Profit Margin (10%)', profitMargin * rate, 1);
-    }
 }
 
 /**
